@@ -166,7 +166,7 @@ class Heuristic(object):
 
             # Find steps with unreachable in them
             ureachs = [
-                s for s in steps.steps if 'DexUnreachable' in s.watches.keys()
+                s for s in steps.steps if s.unreachable
             ]
             assert len(ureachs) <= len(cmds)
 

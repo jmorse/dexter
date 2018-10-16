@@ -379,6 +379,7 @@ class TestDextIR(unittest.TestCase):
               "step_index": 0,
               "step_kind": null,
               "stop_reason": "BREAKPOINT",
+              "unreachable": false,
               "frames": [
                 {
                   "function": null,

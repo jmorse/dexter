@@ -74,9 +74,10 @@ class LLDB(DebuggerBase):
 
     def _load_interface(self):
         try:
-            args = [self.lldb_executable, '-P']
-            pythonpath = check_output(
-                args, stderr=STDOUT).rstrip().decode('utf-8')
+            pythonpath = '/usr/lib/llvm-6.0/lib/python2.7/site-packages'
+            #args = [self.lldb_executable, '-P']
+            #pythonpath = check_output(
+            #    args, stderr=STDOUT).rstrip().decode('utf-8')
         except CalledProcessError as e:
             raise LoadDebuggerException(str(e), sys.exc_info())
         except OSError as e:

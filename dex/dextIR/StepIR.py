@@ -63,6 +63,7 @@ class StepIR(SrObject):
             dict_of=True,
             required_in_init=False,
             default_value=OrderedDict),
+        SrField( 'unreachable', bool, default_value=False, required_in_init=False),
     ]
 
     def __str__(self):

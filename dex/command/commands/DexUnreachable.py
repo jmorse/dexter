@@ -6,13 +6,8 @@ class DexUnreachable(CommandBase):
     super(DexUnreachable, self).__init__()
     pass
 
-  def __call__(self, debugger):
+  def __call__(self, debugger, step_info):
     # If we're ever called, at all, then we're evaluating a line that has
     # been marked as unreachable. Which means a failure.
-    vir = ValueIR(expression="Unreachable",
-                  value="True", type=None,
-                  error_string=None,
-                  could_evaluate=True,
-                  is_optimized_away=True,
-                  is_irretrievable=False)
-    return {'DexUnreachable' : vir}
+    step_info.unreachable = True
+    return dict()
